@@ -36,8 +36,8 @@
     <tbody>
     @forelse($ticketModel as $item)
         <tr>
-            <td>{{ $item->id }}</td>
             <td>{{ $item->ticket }}</td>
+            <td>{{ $item->email['email'] }}</td>
             <td>{{(Carbon\Carbon::parse($item->expiration_date)->diffInDays() > 90) ? "Expirado" : "Vigente" }}</td>
         </tr>
     @empty
